@@ -1,1 +1,0 @@
-# Malicious_Sign_Detection
