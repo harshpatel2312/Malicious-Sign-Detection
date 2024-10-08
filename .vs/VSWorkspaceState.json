@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\model",
+    "\\model\\images"
   ],
-  "SelectedNode": "\\C:\\Users\\oguzh\\Source\\Repos\\Malicious-Sign-Detection",
+  "SelectedNode": "\\model\\images",
   "PreviewInSolutionExplorer": false
 }
