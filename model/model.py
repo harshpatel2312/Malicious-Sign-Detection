@@ -1,8 +1,14 @@
 import os
 from PIL import Image
 
-#pathforimages = "images\"
-#listofimages = os.listdir(pathforimages)
+pathforimages = "raw_images\\"
+listofimages = os.listdir(pathforimages)
 
-with Image.open("images\image1.jpg") as image1:
-	image1.rotate(45).show()
+for eachimage in listofimages:
+    image=Image.open(pathforimages+eachimage)
+    resizedimage=image.resize((40,40))
+    resizedimage.save(f"preprocessed_images\\resized_{eachimage}")
+    
+    
+    
+    
