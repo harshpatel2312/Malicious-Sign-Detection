@@ -1,5 +1,29 @@
 {% extends 'root.html' %}
 
 {% block content %}
-<h1 style='color:red; text-align:center;'>Render About Page here</h1>
+<body>
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+    <div class="section-features">
+        <div class="container">
+            <h2 class="text-center">About</h2>
+            <p>
+                This project is being developed by three students studying Bachelors of Computer Science in Sheridan College, Ontario as a capstone project:
+            </p>
+            <ul>
+                <li >Harsh Patel</li>
+                <li >Sameer Ahmed</li>
+                <li >Oguzhan Ozbek</li>
+            </ul>
+            <p>
+                This project is also supervised by one of one faculty member:
+            </p>
+            <ul>
+                <li >Volodymyr Voytenko</li>
+            </ul
+            <p>
+                While this project is being developed proprietarily as of 2024, it will be open-source once the defence of Elaboration phase is completed in April 2025. 
+            </p>
+        </div>
+    </div>
+</body>
 {% endblock %}
