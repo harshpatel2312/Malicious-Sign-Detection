@@ -2,15 +2,16 @@
     position: relative;
     background-size: cover;
     color: black;
-    height: 20vh;
+    height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin: 60px auto;
 }
 .top-image {
     display: block;
-    margin: 20px auto;
+    margin: 60px auto;
     max-width: 100%;
     height: auto;
 }
@@ -18,5 +19,5 @@
 .section-features {
     padding: 60px 15px;
     background-color: #e9ecef;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
 }

@@ -2,12 +2,13 @@
     background-color: black;
     color: white;
     text-align: center;
-    position: relative;
+    position: fixed;
     padding: 5px;
     bottom: 0;
     left: 0;
     right: 0;
     text-align: center;
     padding: 10px;
+    max-height: 40px;
 
 }

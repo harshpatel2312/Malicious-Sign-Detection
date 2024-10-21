@@ -1,5 +1,21 @@
 {% extends 'root.html' %}
 
 {% block content %}
-<h1 style='color:red; text-align:center;' >Render Monitor Page here</h1>
+<body>
+    <link rel="stylesheet" href="{{ url_for('static', filename='monitor.css') }}">
+    <div class="section-features">
+        <div class="container">
+            <h2 class="text-center">Monitoring Dashboard</h2>
+            <p>
+                Please see the details regarding the previous execution below:
+            </p>
+            <ul>
+                <li>Execution Status: Completed</li>
+                <li>Total Execution Time: 0.035 seconds</li>
+                <li>Classification Result: Red Light</li>
+                <li>Output: Execute Brake()</li>
+            </ul>
+        </div>
+    </div>
+</body>
 {% endblock %}
