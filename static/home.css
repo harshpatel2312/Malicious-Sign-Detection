@@ -1,0 +1,29 @@
+.top {
+    position: relative;
+    background-size: cover;
+    color: black;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.top-image {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.section-features {
+    padding: 60px 15px;
+    background-color: #e9ecef;
+    margin-bottom: 20px;
+}
+
+.footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
