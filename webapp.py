@@ -14,3 +14,6 @@ def render_monitor():
 @app.route("/about")
 def render_about():
     return render_template("about.html")
+
+if __name__=="__main__":
+    app.run(debug=True)
