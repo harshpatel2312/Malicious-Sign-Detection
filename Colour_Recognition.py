@@ -3,6 +3,7 @@ import pandas as pd
 import cv2
 from flask import Flask, request, jsonify
 import requests
+import threading
 
 app = Flask(__name__)
 
@@ -51,16 +52,23 @@ def mouse_click(event, x, y, flags, param):
 cv2.namedWindow("Color Recognition")
 cv2.setMouseCallback("Color Recognition", mouse_click)
 
-with open("Retrieved Colors.txt", "w") as f:
-    while True:
-        cv2.imshow("Color Recognition", img)
-        if (clicked):
-            text = recognize_color(r, g, b) + " R = " + str(r) + " G = " + str(g) + " B = " + str(b)
-            f.write(text + "\n")
-            print(text)
-            
-            clicked = False
-        if cv2.waitKey(20) & 0xFF == 27:
-            break
+if __name__ == '__main__':
+    threading.Thread(target=run_flask, daemon=True).start()
 
-cv2.destroyAllWindows()
+    with open("Retrieved Colors.txt", "w") as f:
+        while True:
+            cv2.imshow("Color Recognition", img)
+            if clicked:
+                color_name = recognize_color(r, g, b)
+                text = f"{color_name} R = {r} G = {g} B = {b}"
+                f.write(text + "\n")
+                print(text)
+                
+                rgb_string = f"{r},{g},{b}"
+                requests.post('http://127.0.0.1:5000/color', json={
+                    "color_info": f"{color_name} ({rgb_string})"
+                })
+
+                clicked = False
+            if cv2.waitKey(20) & 0xFF == 27:
+                break
