@@ -17,6 +17,9 @@ def post_color():
     recognized_colors.append(data) 
     return jsonify({"message": "Color data received!"}), 200
 
+@app.route('/color', methods=['GET'])
+def get_color():
+    return jsonify(recognized_colors), 200
 
 img = cv2.imread("test_image.jpg")
 index = ["color", "color_name", "hex", "R", "G", "B"]
