@@ -9,6 +9,14 @@ app = Flask(__name__)
 def run_flask():
     app.run(debug=False, port=5001)
 
+recognized_colors = []
+
+@app.route('/color', methods=['POST'])
+def post_color():
+    data = request.json
+    recognized_colors.append(data) 
+    return jsonify({"message": "Color data received!"}), 200
+
 
 img = cv2.imread("test_image.jpg")
 index = ["color", "color_name", "hex", "R", "G", "B"]
