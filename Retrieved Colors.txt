@@ -1,0 +1,25 @@
+Turquoise R = 31 G = 240 B = 198
+Yellow (Ncs) R = 255 G = 209 B = 1
+Ucla Gold R = 254 G = 179 B = 0
+Medium Spring Green R = 1 G = 229 B = 168
+Orange (Web Color) R = 253 G = 164 B = 0
+Caribbean Green R = 2 G = 201 B = 134
+Fluorescent Orange R = 254 G = 191 B = 0
+Pastel Gray R = 200 G = 199 B = 197
+Usc Gold R = 255 G = 202 B = 2
+Lavender Gray R = 199 G = 201 B = 200
+Selective Yellow R = 255 G = 185 B = 0
+Yellow (Ncs) R = 255 G = 211 B = 0
+Medium Spring Green R = 0 G = 228 B = 167
+Smoky Black R = 15 G = 5 B = 3
+Caribbean Green R = 1 G = 207 B = 142
+Green (Pigment) R = 2 G = 149 B = 71
+Caribbean Green R = 1 G = 208 B = 140
+Green (Pigment) R = 0 G = 148 B = 74
+Rackley R = 89 G = 139 B = 176
+Steel Blue R = 74 G = 129 B = 168
+Steel Blue R = 75 G = 124 B = 165
+Steel Blue R = 71 G = 124 B = 164
+Black R = 2 G = 2 B = 2
+Smoky Black R = 24 G = 6 B = 6
+Black R = 10 G = 1 B = 2
