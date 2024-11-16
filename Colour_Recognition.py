@@ -1,6 +1,14 @@
 import numpy as np
 import pandas as pd
-import cv2    
+import cv2
+from flask import Flask, request, jsonify
+import requests
+
+app = Flask(__name__)
+
+def run_flask():
+    app.run(debug=False, port=5001)
+
 
 img = cv2.imread("test_image.jpg")
 index = ["color", "color_name", "hex", "R", "G", "B"]
