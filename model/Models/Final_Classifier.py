@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[4]:
+# In[9]:
 
 
 import os
@@ -16,10 +16,10 @@ from skimage.color import rgba2rgb
 import pickle
 
 
-# In[5]:
+# In[10]:
 
 
-input_dir = 'D:/Capstone/carla_lights - Copy/traffic_light_data'
+input_dir = 'D:/Capstone/Malicious-Sign-Detection/carla_lights/traffic_light_data'
 categories = ['green', 'red', 'yellow']
 blurred_suffix = ' blurred'  
 img_size = (15, 15)  
@@ -31,7 +31,7 @@ data_val = []
 labels_val = []
 
 
-# In[6]:
+# In[11]:
 
 
 def load_images(category, folder_type, data, labels):
@@ -77,7 +77,7 @@ print(f"x_train shape: {x_train.shape}, y_train shape: {y_train.shape}")
 print(f"x_val shape: {x_val.shape}, y_val shape: {y_val.shape}")
 
 
-# In[7]:
+# In[12]:
 
 
 ## training SVC model with hyperparameter tuning
@@ -98,7 +98,7 @@ print(f"Validation Accuracy: {accuracy * 100:.2f}%")
 print(classification_report(y_val, y_pred))
 
 
-# In[8]:
+# In[13]:
 
 
 def classify_image_with_unknown(image_path, model, threshold=0.7):
@@ -119,27 +119,33 @@ def classify_image_with_unknown(image_path, model, threshold=0.7):
     return predicted_class
 
 
-# In[9]:
+# In[14]:
 
 
-model_filename = 'D:/Capstone/Classifier Models/traffic_light_classifier.pkl'  # Specify the filename
-with open(model_filename, 'wb') as file:
+model_file_name = 'D:/Capstone/Malicious-Sign-Detection/classifier'  # Specify the filename
+with open(model_file_name, 'wb') as file:
     pickle.dump(best_estimator, file)
 
-print(f"Model saved as {model_filename}")
+print(f"Model saved as {model_file_name}")
 
 
-# In[10]:
+# In[16]:
 
 
 # Path to the test image
-test_image_path = "D:/Capstone/carla_lights - Copy/traffic_light_data/Messenger_creation_9203779869632344.jpg"
+test_image_path = "D:/Capstone/Malicious-Sign-Detection/Messenger_creation_9203779869632344.jpg"
 
 # Classify the image
 result = classify_image_with_unknown(test_image_path, best_estimator, threshold=0.7)
 
 # Print the result
 print(f"Classification Result: {result}")
+
+
+# In[ ]:
+
+
+
 
 
 # In[ ]:
