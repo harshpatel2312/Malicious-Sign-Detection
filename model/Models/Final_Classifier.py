@@ -147,6 +147,11 @@ end_time = time.time()
 
 #Metrics to be streamed
 execution_time = end_time - start_time
+report = classification_report(y_val, y_pred, output_dict=True)
+precision_macro = report['macro avg']['precision']
+recall_macro = report['macro avg']['recall']
+f1_score_macro = report['macro avg']['f1-score']
+support_macro = report['macro avg']['support']
 
 # In[ ]:
 
