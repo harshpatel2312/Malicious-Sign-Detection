@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import render_template
+import requests
 
 app=Flask(__name__)
 
@@ -9,7 +10,13 @@ def render_home():
 
 @app.route("/monitor")
 def render_monitor():
-    return render_template("monitor.html")
+    try:
+        response = requests.get('http://127.0.0.1:5000/data')
+        metrics = response.json() if response.status_code == 200 else {}
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching colors: {e}")
+        metrics ={}
+    return render_template("monitor.html", metrics=metrics)
 
 @app.route("/about")
 def render_about():
