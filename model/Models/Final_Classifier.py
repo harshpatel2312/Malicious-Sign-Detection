@@ -15,9 +15,12 @@ from sklearn.metrics import accuracy_score, classification_report
 from skimage.color import rgba2rgb
 import pickle
 import time
+from flask import Flask, jsonify
+import threading
 
 
 # In[10]:
+app = Flask(__name__)
 
 start_time=time.time()
 
@@ -135,7 +138,7 @@ print(f"Model saved as {model_file_name}")
 
 
 # Path to the test image
-test_image_path = "../../Messenger_creation_9203779869632344.jpg"
+test_image_path = "../../carla_lights/traffic_light_data/test_image.jpg"
 
 # Classify the image
 result = classify_image_with_unknown(test_image_path, best_estimator, threshold=0.7)
@@ -162,6 +165,16 @@ metrics = {
     "Macro_F1_score": f1_score_macro,
     "Macro_Support": support_macro
 }
+
+def run_flask():
+    app.run(debug=False, port=5000)
+
+@app.route('/data', methods=['GET'])
+def get_data():
+    return jsonify(metrics), 200
+
+if __name__ == '__main__':
+    threading.Thread(target=run_flask, daemon=True).start()
 
 # In[ ]:
 
