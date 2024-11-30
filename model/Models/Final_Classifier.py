@@ -19,7 +19,7 @@ import pickle
 # In[10]:
 
 
-input_dir = 'D:/Capstone/Malicious-Sign-Detection/carla_lights/traffic_light_data'
+input_dir = '../../carla_lights/traffic_light_data'
 categories = ['green', 'red', 'yellow']
 blurred_suffix = ' blurred'  
 img_size = (15, 15)  
@@ -122,7 +122,7 @@ def classify_image_with_unknown(image_path, model, threshold=0.7):
 # In[14]:
 
 
-model_file_name = 'D:/Capstone/Malicious-Sign-Detection/classifier'  # Specify the filename
+model_file_name = '../../classifier'  # Specify the filename
 with open(model_file_name, 'wb') as file:
     pickle.dump(best_estimator, file)
 
@@ -133,7 +133,7 @@ print(f"Model saved as {model_file_name}")
 
 
 # Path to the test image
-test_image_path = "D:/Capstone/Malicious-Sign-Detection/Messenger_creation_9203779869632344.jpg"
+test_image_path = "../../Messenger_creation_9203779869632344.jpg"
 
 # Classify the image
 result = classify_image_with_unknown(test_image_path, best_estimator, threshold=0.7)
