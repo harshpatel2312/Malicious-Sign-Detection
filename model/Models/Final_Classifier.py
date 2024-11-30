@@ -14,10 +14,12 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import accuracy_score, classification_report
 from skimage.color import rgba2rgb
 import pickle
+import time
 
 
 # In[10]:
 
+start_time=time.time()
 
 input_dir = '../../carla_lights/traffic_light_data'
 categories = ['green', 'red', 'yellow']
@@ -141,6 +143,10 @@ result = classify_image_with_unknown(test_image_path, best_estimator, threshold=
 # Print the result
 print(f"Classification Result: {result}")
 
+end_time = time.time()
+
+#Metrics to be streamed
+execution_time = end_time - start_time
 
 # In[ ]:
 
