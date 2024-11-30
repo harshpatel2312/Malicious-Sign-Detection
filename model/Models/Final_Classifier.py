@@ -153,6 +153,16 @@ recall_macro = report['macro avg']['recall']
 f1_score_macro = report['macro avg']['f1-score']
 support_macro = report['macro avg']['support']
 
+metrics = {
+    "Classification_Result": result,
+    "Validation_Accuracy": accuracy,
+    "Execution_Time": execution_time,
+    "Macro_Precision": precision_macro,
+    "Macro_Recall": recall_macro,
+    "Macro_F1_score": f1_score_macro,
+    "Macro_Support": support_macro
+}
+
 # In[ ]:
 
 
