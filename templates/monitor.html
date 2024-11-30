@@ -11,8 +11,13 @@
             </p>
             <ul>
                 <li>Execution Status: Completed</li>
-                <li>Total Execution Time: 0.035 seconds</li>
-                <li>Classification Result: Red Light</li>
+                <li>Captured Metrics:
+                    <ul>
+                        {% for key, value in metrics.items() %}
+                            <li><strong>{{ key }}:</strong> {{ value }}</li>
+                        {% endfor %}
+                    </ul>
+                </li>
                 <li>Output: Execute Brake()</li>
             </ul>
         </div>
