@@ -22,6 +22,6 @@ Work is ongoing to further improve the model's performance under challenging con
 ## Technologies 
 - **Python**: Programming language used for the implementation.
 - **OpenCV** and **YOLO**: Library used for object classification and detection.
-- **sklearn**: Library used for training and classification of images.
+- **scikit-learn**: Library used for training and classification of images.
 - **matplotlib**: Library for creating interactive visualizations.
 - **Flask**: Web framework used to develop Monitoring Dashboard.
