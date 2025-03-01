@@ -53,15 +53,24 @@ def render_monitor():
     )])
     fig3.update_layout(title_text="Macro Recall")
 
+    fig4 = go.Figure(data=[go.Pie(
+        labels=["Macro F1 Score", "Remaining"],
+        values=[macro_f1_score, 100 - macro_f1_score],
+        hole=0.4
+    )])
+    fig4.update_layout(title_text="Macro F1 Score")
+
     chart1_html = pio.to_html(fig1, full_html=False)
     chart2_html = pio.to_html(fig2, full_html=False)
     chart3_html = pio.to_html(fig3, full_html=False)
+    chart4_html = pio.to_html(fig4, full_html=False)
 
     return render_template("monitor.html",
                            metrics=metrics,
                            chart1_html=chart1_html,
                            chart2_html=chart2_html,
-                           chart3_html=chart3_html)
+                           chart3_html=chart3_html,
+                           chart4_html=chart4_html)
 
 if __name__=="__main__":
     app.run(host='127.0.0.1', port=5001, debug=True)
