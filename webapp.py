@@ -39,11 +39,20 @@ def render_monitor():
     )])
     fig1.update_layout(title_text="Macro Support")
 
+    fig2 = go.Figure(data=[go.Pie(
+        labels=["Macro Precision", "Remaining"],
+        values=[macro_precision, 100 - macro_precision],
+        hole=0.4
+    )])
+    fig2.update_layout(title_text="Macro Precision")
+
     chart1_html = pio.to_html(fig1, full_html=False)
-    
+    chart2_html = pio.to_html(fig2, full_html=False)
+
     return render_template("monitor.html",
                            metrics=metrics,
-                           chart1_html=chart1_html)
+                           chart1_html=chart1_html,
+                           chart2_html=chart2_html)
 
 if __name__=="__main__":
     app.run(host='127.0.0.1', port=5001, debug=True)
