@@ -1,6 +1,7 @@
-from flask import Flask
-from flask import render_template
+from flask import Flask, render_template
 import requests
+import plotly.graph_objects as go
+import plotly.io as pio
 
 app=Flask(__name__)
 
