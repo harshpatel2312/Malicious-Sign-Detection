@@ -31,7 +31,19 @@ def render_monitor():
     yellow_support = metrics.get("Yellow_Support", 0)
     green_support = metrics.get("Green_Support", 0)
     unknown_support = metrics.get("Unknown_Support", 0)
-    return render_template("monitor.html", metrics=metrics)
+
+    fig1 = go.Figure(data=[go.Pie(
+        labels=["Green", "Yellow", "Red", "Unknown"],
+        values=[green_support, yellow_support, red_support, unknown_support],
+        hole=0.4
+    )])
+    fig1.update_layout(title_text="Macro Support")
+
+    chart1_html = pio.to_html(fig1, full_html=False)
+    
+    return render_template("monitor.html",
+                           metrics=metrics,
+                           chart1_html=chart1_html)
 
 if __name__=="__main__":
     app.run(host='127.0.0.1', port=5001, debug=True)

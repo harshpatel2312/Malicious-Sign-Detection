@@ -23,6 +23,10 @@
                 <li><strong>Green Support:</strong> {{ metrics.get("Green_Support") }}</li>
                 <li><strong>Unknown Support:</strong> {{ metrics.get("Unknown_Support") }}</li>
             </ul>
+
+            <h3 class="center-title">Macro Support Pie Chart</h3>
+            <div>{{ chart1_html | safe }}</div>
+            
         </div>
     </div>
 {% endblock %}
