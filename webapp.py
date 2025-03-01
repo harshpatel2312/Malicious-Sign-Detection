@@ -23,6 +23,13 @@ def render_about():
 @app.route("/monitor")
 def render_monitor():
     metrics = get_metrics()
+    macro_precision = metrics.get("Macro_Precision", 0)*100
+    macro_recall = metrics.get("Macro_Recall", 0)*100
+    macro_f1_score = metrics.get("Macro_F1_score", 0)*100
+    red_support = metrics.get("Red_Support", 0)
+    yellow_support = metrics.get("Yellow_Support", 0)
+    green_support = metrics.get("Green_Support", 0)
+    unknown_support = metrics.get("Unknown_Support", 0)
     return render_template("monitor.html", metrics=metrics)
 
 if __name__=="__main__":
