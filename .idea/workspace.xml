@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6fdfd9e0-3174-4b58-856c-b3e80466c0a4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/model/Models/Final_Classifier.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/model/Models/Final_Classifier.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Models/Traffic_Light_Presence_Detector.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/model/Models/Traffic_Light_Presence_Detector.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classifier" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Models/Automated_Classifier.ipynb" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +27,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.train.executor": "Run",
     "Python.webapp.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -57,6 +59,7 @@
       <workItem from="1733268450381" duration="682000" />
       <workItem from="1733269732429" duration="1517000" />
       <workItem from="1733327676784" duration="1007000" />
+      <workItem from="1741216083069" duration="398000" />
     </task>
     <servers />
   </component>
@@ -64,6 +67,7 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Malicious_Sign_Detection$train.coverage" NAME="train Coverage Results" MODIFIED="1741216304658" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model/Models/Scripts" />
     <SUITE FILE_PATH="coverage/Malicious_Sign_Detection$webapp.coverage" NAME="webapp Coverage Results" MODIFIED="1733327966558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
