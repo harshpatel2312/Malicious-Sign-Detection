@@ -24,39 +24,49 @@ def render_about():
 @app.route("/monitor")
 def render_monitor():
     metrics = get_metrics()
-    macro_precision = metrics.get("Macro_Precision", 0)*100
-    macro_recall = metrics.get("Macro_Recall", 0)*100
-    macro_f1_score = metrics.get("Macro_F1_score", 0)*100
-    red_support = metrics.get("Red_Support", 0)
-    yellow_support = metrics.get("Yellow_Support", 0)
-    green_support = metrics.get("Green_Support", 0)
-    unknown_support = metrics.get("Unknown_Support", 0)
+    precision_macro = metrics['macro avg']['precision']*100
+    recall_macro = metrics['macro avg']['recall']*100
+    f1_score_macro = metrics['macro avg']['f1-score']*100
+    support_macro = metrics['macro avg']['support']
+    support_red = metrics['red']['support']
+    support_yellow = metrics['yellow']['support']
+    support_green = metrics['green']['support']
+    support_unknown = metrics['unknown']['support']
 
     fig1 = go.Figure(data=[go.Pie(
         labels=["Green", "Yellow", "Red", "Unknown"],
-        values=[green_support, yellow_support, red_support, unknown_support],
-        hole=0.4
+        values=[support_red, support_yellow, support_green, support_unknown],
+        hole=0.4,
+        pull=[0, 0, 0, 0.1],
+        marker=dict(
+        colors=["#00FF00", "#FFFF00", "#FF0000", "#A9A9A9"])
     )])
     fig1.update_layout(title_text="Macro Support")
 
     fig2 = go.Figure(data=[go.Pie(
-        labels=["Macro Precision", "Remaining"],
-        values=[macro_precision, 100 - macro_precision],
-        hole=0.4
+        labels=["Macro Precision", "Error Rate"],
+        values=[precision_macro, 100 - precision_macro],
+        hole=0.4,
+        pull=[0, 0.1],
+        hovertemplate=["<b>%{label}</b><br>Refers to fraction of true positive among all the positives: TP/TP+FP<br><extra></extra>","<b>%{label}</b><br><extra></extra>"]
     )])
     fig2.update_layout(title_text="Macro Precision")
 
     fig3 = go.Figure(data=[go.Pie(
-        labels=["Macro Recall", "Remaining"],
-        values=[macro_recall, 100 - macro_recall],
-        hole=0.4
+        labels=["Macro Recall", "Error Rate"],
+        values=[recall_macro, 100 - recall_macro],
+        hole=0.4,
+        pull=[0, 0.1],
+        hovertemplate=["<b>%{label}</b><br>Refers to fraction of true positive among all correct events: TP/TP+FN<br><extra></extra>","<b>%{label}</b><br><extra></extra>"]
     )])
     fig3.update_layout(title_text="Macro Recall")
 
     fig4 = go.Figure(data=[go.Pie(
-        labels=["Macro F1 Score", "Remaining"],
-        values=[macro_f1_score, 100 - macro_f1_score],
-        hole=0.4
+        labels=["Macro F1 Score", "Error Rate"],
+        values=[f1_score_macro, 100 - f1_score_macro],
+        hole=0.4,
+        pull=[0, 0.1],
+        hovertemplate=["<b>%{label}</b><br>Refers to harmonic mean of Precision and Recall: 2 x (PrecisionxRecall)/(Precision+Recall)<br><extra></extra>","<b>%{label}</b><br><extra></extra>"]
     )])
     fig4.update_layout(title_text="Macro F1 Score")
 
