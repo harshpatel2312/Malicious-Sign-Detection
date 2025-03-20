@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fdfd9e0-3174-4b58-856c-b3e80466c0a4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Models/.ipynb_checkpoints/test-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/model/Models/.ipynb_checkpoints/test-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Models/Scripts/.ipynb_checkpoints/train-checkpoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/Models/Scripts/.ipynb_checkpoints/train-checkpoint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Models/Scripts/Resources/classification_report" beforeDir="false" afterPath="$PROJECT_DIR$/model/Models/Scripts/Resources/classification_report" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Models/Scripts/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/Models/Scripts/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Models/classifier" beforeDir="false" afterPath="$PROJECT_DIR$/model/Models/classifier" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Models/test.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/model/Models/test.ipynb" afterDir="false" />
-    </list>
+    <list default="true" id="6fdfd9e0-3174-4b58-856c-b3e80466c0a4" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,7 +60,7 @@
       <workItem from="1741232734081" duration="10961000" />
       <workItem from="1741279431702" duration="27000" />
       <workItem from="1741838380592" duration="1143000" />
-      <workItem from="1742497733846" duration="1373000" />
+      <workItem from="1742497733846" duration="1804000" />
     </task>
     <servers />
   </component>
