@@ -2,12 +2,11 @@ version: '3.7'
 
 services:
   app:
-    image: retya66/monitoring_app:latest
-    container_name: monitoring_app
+    image: retya66/monitoring-app:latest
+    container_name: monitoring_app_5001
     working_dir: /app
     volumes:
       - .:/app
-    command: python3 app.py
     ports:
       - '5001:5001'
 
@@ -19,6 +18,8 @@ services:
     ports:
       - '9090:9090'
     restart: always
+    depends_on:
+      - app
 
   node-exporter:
     image: prom/node-exporter:latest
@@ -37,3 +38,17 @@ services:
     restart: always
     depends_on:
       - prometheus
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana_3000
+    ports:
+      - "3000:3000"
+    restart: always
+    volumes:
+      - grafana-data:/var/lib/grafana
+    depends_on:
+      - prometheus
+
+volumes:
+  grafana-data:
