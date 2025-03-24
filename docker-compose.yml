@@ -17,13 +17,23 @@ services:
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
     ports:
-      - "9090:9090"
+      - '9090:9090'
     restart: always
+
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: node-exporter_9100
+    ports:
+      - '9100:9100'
+    restart: always
+    depends_on:
+      - prometheus
 
   blackbox-exporter:
     image: prom/blackbox-exporter:latest
     container_name: blackbox-exporter_9115
     ports:
-      - "9115:9115"
+      - '9115:9115'
     restart: always
-
+    depends_on:
+      - prometheus
