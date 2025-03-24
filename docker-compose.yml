@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   app:
-    build: .
+    image: retya66/monitoring_app:latest
     container_name: monitoring_app
     working_dir: /app
     volumes:
