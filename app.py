@@ -7,7 +7,7 @@ app=Flask(__name__)
 
 def get_metrics():
     try:
-        response = requests.get('http://host.docker.internal:5000/data')
+        response = requests.get('http://24.150.183.74:5000/data')
         return response.json() if response.status_code == 200 else {}
     except requests.exceptions.RequestException as e:
         print(f"Fetching metrics is failed: {e}")

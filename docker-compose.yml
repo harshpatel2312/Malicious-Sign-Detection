@@ -2,11 +2,9 @@ version: '3.7'
 
 services:
   app:
-    image: retya66/monitoring-app:latest
+    image: retya66/monitoring-app:v2
     container_name: monitoring_app_5001
     working_dir: /app
-    volumes:
-      - .:/app
     ports:
       - '5001:5001'
     restart: unless-stopped
