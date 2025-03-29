@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   app:
-    image: retya66/monitoring-app:v2
+    image: retya66/monitoring-app:v3
     container_name: monitoring_app_5001
     working_dir: /app
     ports:
