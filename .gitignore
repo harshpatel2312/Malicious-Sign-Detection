@@ -1,0 +1,15 @@
+# Ignore IDE/editor-specific files
+.vs/
+.idea/
+
+# Ignore Jupyter Notebook checkpoint files
+.ipynb_checkpoints/
+
+# Ignore python cache
+model/Models/__pycache__/
+
+# Ignore training data
+traffic_light_data/
+
+# Ignore testing data
+model/Resources/

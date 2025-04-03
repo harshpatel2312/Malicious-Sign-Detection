@@ -117,7 +117,7 @@ def conf_matrix(y_val, y_pred, categories):
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 input_dir = r"E:\Education\Projects\Machine Learning\Computer Vision\Malicious-Sign-Detection\traffic_light_data"
-categories = ['green', 'red', 'yellow', "unknown"]
+categories = ['green', 'red', 'yellow']
 blurred_suffix = ' blurred'  
 img_size = (15, 15)
 
