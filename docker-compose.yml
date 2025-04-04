@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   app:
-    image: retya66/monitoring-app:v3
+    image: retya66/monitoring-app:v4
     container_name: monitoring_app_5001
     working_dir: /app
     ports:
@@ -45,7 +45,9 @@ services:
       - "3000:3000"
     volumes:
       - grafana-data:/var/lib/grafana
-      - ./grafana.ini:/etc/grafana/grafana.ini
+      - ./grafana/grafana.ini:/etc/grafana/grafana.ini
+      - ./grafana/provisioning:/etc/grafana/provisioning
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
     depends_on:
       - prometheus
     restart: unless-stopped
