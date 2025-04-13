@@ -1,14 +1,16 @@
-.footer {
-    background-color: black;
-    color: white;
-    text-align: center;
-    position: fixed;
-    padding: 5px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
-    padding: 10px;
-    max-height: 40px;
+.container {
+    max-width: 100%; /* Removes Bootstrap's default centering */
+    width: 100%; 
+    padding-left: 15px; 
+    padding-right: 15px;
+}
 
+body {
+    padding-left: 10px;  /* Small padding on the left */
+    padding-right: 10px; /* Small padding on the right */
+}
+.section-features {
+    padding: 30px;  /* Minimal padding */
+    margin: 30px auto;
+    width: 100%;
 }
