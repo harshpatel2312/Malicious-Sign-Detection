@@ -1,0 +1,47 @@
+{% extends 'root.html' %}
+
+{% block content %}
+<body>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    
+    <div class="top">
+        <div>
+            <h1>Enhancing Safety in Autonomous Vehicles</h1>
+            <p>Detection of Malicious Signs by Self-Driving Cars</p>
+            <a href="#about" class="btn btn-primary btn-lg" style="background-color: #e9ecef; color: black; border-color: red;">Learn More</a>
+        </div>
+    </div>
+    <div>
+        <img src="{{ url_for('static', filename='home-image.jpeg') }}" class="top-image">
+    </div>
+
+    <div class="section-features" id="about">
+        <div class="container">
+            <h2 class="text-center">Project Overview</h2>
+            <p>
+                The project aims to enhance the safety and reliability of autonomous vehicles by developing a machine learning model capable of detecting and classifying signs with malicious intent.
+            </p>
+            <p>
+                Utilizing advanced computer vision techniques, the model will be integrated into the CARLA simulation environment to test its performance under various conditions, including adverse weather and low-light scenarios. This project addresses critical challenges in autonomous driving technology, such as improving object detection and mitigating potential safety hazards posed by undetected malicious signs.
+            </p>
+            <p>
+                Key performance metrics, including accuracy, precision, recall, and F1-score, will be employed to evaluate the model's effectiveness. This work is positioned to advance the field of autonomous vehicle perception, contributing to safer transportation, technological innovation, and potential economic benefits. The project involves collaboration with academia, industry experts, and government agencies to ensure the development of a robust, scalable solution that meets real-world needs.
+            </p>
+        </div>
+    </div>
+
+    <div class="section-features" id="features">
+        <div class="container">
+            <h2 class="text-center">Key Features</h2>
+            <ul class="list-group">
+                <li class="list-group-item">Advanced machine learning model for sign detection</li>
+                <li class="list-group-item">Integration with CARLA simulation for real-world testing</li>
+                <li class="list-group-item">Evaluation based on accuracy, precision, recall, and F1-score</li>
+                <li class="list-group-item">Robust performance under various conditions</li>
+                <li class="list-group-item">Collaboration with experts across academia and industry</li>
+            </ul>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+{% endblock %}

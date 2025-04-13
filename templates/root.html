@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Malicious Sign Detection{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: powderblue;
+        }
+    </style>
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <link rel="stylesheet" href="{{ url_for('static', filename='root.css') }}">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Malicious Sign Detection</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/" style="color: black;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="monitor" style="color: black;">Monitor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about" style="color: black;">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    
+    <footer class="footer">
+        <p>&copy; 2025 Detection of Malicious Signs by Self-Driving Cars. All rights reserved.</p>
+    </footer>
+</body>
+</html>

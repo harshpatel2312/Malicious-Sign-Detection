@@ -1,0 +1,40 @@
+{% extends 'root.html' %}
+
+{% block head %}
+    {{ super() }} 
+    <meta http-equiv="refresh" content="3">
+    <link rel="stylesheet" href="{{ url_for('static', filename='monitor.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="section-features">
+        <div class="container">
+            <h2 class="text-center">Monitoring Dashboard</h2>
+            <p>Please see the details regarding the previous execution below:</p>
+            <ul>
+                <li><strong>Execution Status:</strong> Completed</li>
+                <li><strong>Execution Time:</strong> {{ metrics.get("Execution_Time") | int }} seconds</li>
+                <li><strong>Macro Precision:</strong> {{ metrics.get("Macro_Precision") }}</li>
+                <li><strong>Macro Recall:</strong> {{ metrics.get("Macro_Recall") }}</li>
+                <li><strong>Macro F1 Score:</strong> {{ metrics.get("Macro_F1_score") }}</li>
+                <li><strong>Macro Support:</strong> {{ metrics.get("Macro_Support") }}</li>
+                <li><strong>Red Support:</strong> {{ metrics.get("Red_Support") }}</li>
+                <li><strong>Yellow Support:</strong> {{ metrics.get("Yellow_Support") }}</li>
+                <li><strong>Green Support:</strong> {{ metrics.get("Green_Support") }}</li>
+                <li><strong>Unknown Support:</strong> {{ metrics.get("Unknown_Support") }}</li>
+            </ul>
+
+            <h3 class="center-title">Macro Support Pie Chart</h3>
+            <div>{{ chart1_html | safe }}</div>
+
+            <h3 class="center-title">Macro Precision Pie Chart</h3>
+            <div>{{ chart2_html | safe }}</div>
+
+            <h3 class="center-title">Macro Recall Pie Chart</h3>
+            <div>{{ chart3_html | safe }}</div>
+
+            <h3 class="center-title">Macro F1 Score Pie Chart</h3>
+            <div>{{ chart4_html | safe }}</div>
+        </div>
+    </div>
+{% endblock %}
