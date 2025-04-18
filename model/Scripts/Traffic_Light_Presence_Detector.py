@@ -4,11 +4,31 @@ import pickle
 import time
 from ultralytics import YOLO
 from classify import test
+from flask import Flask, jsonify
+import threading
+
+# Flask Service
+app = Flask(__name__)
+
+def run_flask():
+    app.run(host='0.0.0.0', port=5000, debug=False)
+
+@app.route('/data', methods=['GET'])
+def get_data():
+    return jsonify(report), 200
+
+threading.Thread(target=run_flask, daemon=True).start()
 
 # Loading the trained model
 model_file_name = r"..\Trained_with_threshold.pkl"
 with open(model_file_name, 'rb') as file:
     best_estimator = pickle.load(file)
+
+# Loading calssification_report
+with open('Resources/classification_report', 'rb') as f:
+    report = pickle.load(f)
+report["Execution_Time_of_Prediction"] = None
+report["Test_Results"] = []
 
 img_size = (20, 20) # Resizing for consistency
 
@@ -51,7 +71,9 @@ while True:
     
     # Access the first result in the list
     result = results[0]
-    
+
+    test_results = {}
+
     # Iterate through detected boxes
     for box in result.boxes:
         class_id = int(box.cls)  # Object class ID
@@ -60,7 +82,8 @@ while True:
             x1, y1, x2, y2 = map(int, box.xyxy[0])  # Bounding box coordinates
             traffic_light_roi = frame[y1:y2, x1:x2]  # Crop the traffic light region
 
-            test(traffic_light_roi, img_size, frame_count, best_estimator)
+            test_results[f"frame_{frame_count}"] = test(traffic_light_roi, img_size, frame_count, best_estimator)
+            report["Test_Results"].append(test_results)
 
             break  # Avoid multiple saves for the same frame
             
@@ -87,6 +110,7 @@ while True:
 
 end_time = time.time()
 execution_time = end_time - start_time
+report["Execution_Time_of_Prediction"] = execution_time
 print(f"Execution Time: {execution_time}")
 
 print(f"Total frames processed: {frame_count}")

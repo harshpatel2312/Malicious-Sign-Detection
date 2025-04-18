@@ -22,5 +22,6 @@ def test(image, img_size, frame_count, best_estimator):
         # Classify the image
         result = classify_image_with_unknown(image, img_size, best_estimator, threshold=0.4)
         print(f"Frame: {frame_count}, Classification Result: {result}")
+        return result
     else:
         print(f"Skipping frame_{frame_count}: Not a useful frame.")
