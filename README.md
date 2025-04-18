@@ -25,8 +25,8 @@ Malicious-Sign-Detection/
 ### 🔄 Option 1: Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/Malicious-Sign-Detection.git
-cd Malicious-Sign-Detection/model/Scripts
+git clone https://github.com/harshpatel2312/Malicious-Sign-Detection.git
+cd Malicious-Sign-Detection
 ```
 
 ### 📥 Option 2: Download Individual Files
