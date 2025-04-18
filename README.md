@@ -1,27 +1,90 @@
-# Malicious Sign Detection
+## 🚦 Traffic Light Presence Detection
 
-With the rise of autonomous vehicles, ensuring road safety through accurate traffic signal recognition has become a critical challenge. This project focuses on detecting and identifying malicious or altered traffic lights that could mislead self-driving cars, potentially causing accidents or unsafe driving behavior.
+`Traffic_Light_Presence_Detector.py` detects and classifies traffic light colors in video frames using a combination of **YOLOv8** object detection and a custom-trained **SVM classifier**.
 
-## 𝐎𝐛𝐣𝐞𝐜𝐭𝐢𝐯𝐞:
-The project aimed to develop a robust system to detect and classify malicious traffic lights using custom-built machine learning models.
+---
 
-## 𝐌𝐞𝐭𝐡𝐨𝐝𝐨𝐥𝐨𝐠𝐲:
-- Captured video feed from a camera to simulate real-world driving scenarios.
-- Designed and implemented a custom machine learning model for traffic light detection and classification.
-- Designed a classifier to process video frames and detect anomalies in light colors and patterns.
-- Trained and evaluated the model using labeled datasets, focusing on performance metrics such as accuracy, precision, recall, and F1-score.
-- Developed a Flask web application to monitor execution time, display performance metrics, and provide insights into model performance and behavior.
+### 📁 Required File Structure
 
-## 𝐑𝐞𝐬𝐮𝐥𝐭𝐬:
-Achieved 95% accuracy in identifying tampered and malicious traffic lights under various conditions.
+Ensure the following file structure is maintained:
 
-## 𝐂𝐨𝐧𝐜𝐥𝐮𝐬𝐢𝐨𝐧:
-This project demonstrated the effectiveness of a custom machine learning model combined with computer vision techniques in enhancing the safety of autonomous vehicles by identifying and mitigating threats posed by malicious traffic lights. 
-Work is ongoing to further improve the model's performance under challenging conditions, such as low light and fog.
+```bash
+Malicious-Sign-Detection/
+│
+├── model/
+│   ├── Trained_with_threshold.pkl
+│   ├── Resources/
+│   │   └── Videos/
+│   │       └── your_video.mp4
+│   └── Scripts/
+│       ├── classify.py
+│       └── Traffic_Light_Presence_Detector.py
+├── requirements.txt
+```
 
-## Technologies 
-- **Python**: Programming language used for the implementation.
-- **OpenCV** and **YOLO**: Library used for object classification and detection.
-- **scikit-learn**: Library used for training and classification of images.
-- **matplotlib**: Library for creating interactive visualizations.
-- **Flask**: Web framework used to develop Monitoring Dashboard.
+### 🔄 Option 1: Clone the Repository
+
+```bash
+git clone https://github.com/harshpatel2312/Malicious-Sign-Detection.git
+cd Malicious-Sign-Detection/model/Scripts
+```
+
+### 📥 Option 2: Download Individual Files
+If you prefer to download only a few files, ensure the following are placed together in the correct structure:
+* `Traffic_Light_Presence_Detector.py`
+* `classify.py`
+* `Trained_with_threshold.pkl`
+
+You must then update the file paths in `Traffic_Light_Presence_Detector.py` manually. For example:
+```python
+from classify import test # Modify the path to `classify.py`, if not using predefined file structure
+model_file_name = "Trained_with_threshold.pkl" # Modify path as necessary
+
+```
+
+### 🎥 Using Your Own Video
+To test the model with your own video:
+1. Place your video file in the `model/Resources/Videos/` folder.
+2. Update the path in `Traffic_Light_Presence_Detector.py`:
+```python
+video_path = r"..\Resources\Videos\your_video.mp4" # Modify path as necessary
+```
+
+### 💼 Use in Your Own Projects
+You are welcome to integrate this classifier into your own applications. Simply:
+* Import `classify.py` and the trained `Trained_with_threshold.pkl` model.
+* Resize and preprocess your traffic light images or frames as shown.
+* Call the `classify_image_with_unknown()` function.
+
+This modular design allows easy reuse in smart city systems, autonomous driving, or surveillance analysis.
+
+### 🧰 Setting Up Environment & Installing Dependencies
+1. **Create a virtual environment**
+```bash
+# Create virtual environment
+python -m venv venv
+
+# Windows
+venv\Scripts\activate
+
+# macOS/Linux
+source venv/bin/activate
+```
+2. **Install required packages**
+```bash
+pip install -r requirements.txt
+```
+
+### 🧪 Running Traffic Light Presence Detector
+Navigate to the `Scripts` directory and run:
+```bash
+cd Malicious-Sign-Detection/model/Scripts
+python Traffic_Light_Presence_Detector.py
+```
+
+### 📄 Output
+* Displays the video in `greyscale`.
+* Prints the predicted light color (red, yellow, green, or unknown) per frame.
+
+### 🧠 YOLOv8 Weights
+Make sure you have `yolov8n.pt` downloaded or accessible if not already present in your environment. You can download it from: https://github.com/ultralytics/ultralytics
