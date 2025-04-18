@@ -1,5 +1,6 @@
 import os
 import numpy as np
+import pandas as pd
 from skimage.io import imread
 from skimage.transform import resize
 from sklearn.model_selection import StratifiedKFold, GridSearchCV
@@ -11,6 +12,7 @@ import seaborn as sns
 import pickle
 import logging
 from concurrent.futures import ThreadPoolExecutor
+import math
 
 
 # Make paths relative to the project root
@@ -142,12 +144,6 @@ with open(model_output, 'wb') as file:
     pickle.dump(best_estimator, file)
 logging.info(f"Model saved as {model_output}")
 
-import matplotlib.pyplot as plt
-import seaborn as sns
-import numpy as np
-import pandas as pd
-from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
-
 # Predict with probability
 probs = best_estimator.predict_proba(x_val)
 pred_labels = best_estimator.predict(x_val)
@@ -192,10 +188,6 @@ confidence_df = pd.DataFrame({
 misclassified = confidence_df[confidence_df['True_Label'] != confidence_df['Predicted_Label']]
 print(f"\n Total Misclassifications: {len(misclassified)} / {len(y_val)}")
 print("\n Sample Misclassified Entries:\n", misclassified.head())
-
-from sklearn.metrics import classification_report
-from sklearn.metrics import accuracy_score
-import math
 
 y_pred = best_estimator.predict(x_val)
 report_dict = classification_report(y_val, y_pred, output_dict=True)

@@ -1,7 +1,10 @@
 numpy
+pandas
 scikit-learn
 scikit-image
 opencv-python
 screeninfo
 ultralytics
 flask
+matplotlib
+seaborn
