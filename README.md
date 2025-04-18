@@ -45,7 +45,7 @@ To test the model with your own video:
 1. Place your video file in the `model/Resources/Videos/` folder.
 2. Update the path in `Traffic_Light_Presence_Detector.py`:
 ```python
-video_path = r"..\Resources\Videos\your_video.mp4" # Modify path as necessary
+video_path = r"your_video.mp4" # Modify path as necessary
 ```
 
 ### 💼 Use in Your Own Projects
