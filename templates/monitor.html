@@ -2,7 +2,7 @@
 
 {% block head %}
     {{ super() }}
-    <meta http-equiv="refresh" content="8">
+    <meta http-equiv="refresh" content="1">
     <link rel="stylesheet" href="{{ url_for('static', filename='monitor.css') }}">
 {% endblock %}
 
@@ -14,58 +14,7 @@
 
         <div class="metrics-grid">
             <div>
-                <strong>Accuracy:</strong> {{ metrics['accuracy'] }}
-            </div>
-            <div>
-                <strong>Macro Precision:</strong> {{ metrics['macro avg']['precision'] }}
-            </div>
-            <div>
-                <strong>Macro Recall:</strong> {{ metrics['macro avg']['recall'] }}
-            </div>
-            <div>
-                <strong>Macro F1-Score:</strong> {{ metrics['macro avg']['f1-score'] }}
-            </div>
-            <div>
-                <strong>Macro Support:</strong> {{ metrics['macro avg']['support'] }}
-            </div>
-            <div>
-                <strong>Red Support:</strong> {{ metrics['red']['support'] }}
-            </div>
-            <div>
-                <strong>Yellow Support:</strong> {{ metrics['yellow']['support'] }}
-            </div>
-            <div>
-                <strong>Green Support:</strong> {{ metrics['green']['support'] }}
-            </div>
-            <div>
                 <strong>Execution Time of Prediction (sec):</strong> {{ metrics['Execution_Time_of_Prediction'] }}
-            </div>
-        </div>
-
-        <div class="charts-grid">
-            <div class="chart-item">
-                <h5 class="chart-title">Class Distribution</h5>
-                <div>{{ chart1_html | safe }}</div>
-            </div>
-            <div class="chart-item">
-                <h5 class="chart-title">Accuracy</h5>
-                <div>{{ chart2_html | safe }}</div>
-            </div>
-            <div class="chart-item">
-                <h5 class="chart-title">Macro Precision</h5>
-                <div>{{ chart3_html | safe }}</div>
-            </div>
-            <div class="chart-item">
-                <h5 class="chart-title">Macro Recall</h5>
-                <div>{{ chart4_html | safe }}</div>
-            </div>
-            <div class="chart-item">
-                <h5 class="chart-title">Macro F1 Score</h5>
-                <div>{{ chart5_html | safe }}</div>
-            </div>
-            <div class="chart-item">
-                <h5 class="chart-title">Execution Time of Prediction</h5>
-                <div>{{ execution_time_gauge_html | safe }}</div>
             </div>
         </div>
 
