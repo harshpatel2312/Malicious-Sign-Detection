@@ -1,15 +1,26 @@
 # Ignore IDE/editor-specific files
-.vs/
-.idea/
+**/.vs/
+**/.idea/
 
 # Ignore Jupyter Notebook checkpoint files
-.ipynb_checkpoints/
+**/.ipynb_checkpoints/
 
 # Ignore python cache
-model/Models/__pycache__/
+**/__pycache__/
 
 # Ignore training data
 traffic_light_data/
 
-# Ignore testing data
-model/Resources/
+# Ignore all video files in any Videos folder
+model/Resources/Videos/*.*
+
+# Keep the folder itself
+!model/Resources/Videos/
+
+# Ignore model weight files
+**/yolov8n.pt
+*.pt
+
+# Ignore virtual environments
+venv/
+env/
