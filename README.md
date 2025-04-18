@@ -68,6 +68,22 @@ To test the model with your own video:
 video_path = r"Scripts/Resources/Videos/your_video.mp4" # Modify path as necessary
 ```
 
+### 🌐 Optional: Monitor via Web Dashboard
+> 🛈 **Skip this step if you prefer viewing results directly in the terminal.** This is only needed if you want to monitor predictions on a web interface.
+
+If you’d like to **view model predictions and performance on a live dashboard**, consider using the [`web_monitoring`](https://github.com/harshpatel2312/Malicious-Sign-Detection/tree/web_monitoring) branch:
+
+```bash
+git checkout web_monitoring
+```
+
+This branch provides:
+* A lightweight Flask web app that displays frame-by-frame predictions.
+* A monitor.html dashboard that auto-refreshes and shows classification results.
+* Integrated API communication with `Traffic_Light_Presence_Detector.py`.
+
+📌 Follow the setup instructions in the [`web_monitoring`](https://github.com/harshpatel2312/Malicious-Sign-Detection/tree/web_monitoring) branch’s README to get started.
+
 ### 🧪 Running Traffic Light Presence Detector
 Navigate to the `Scripts` directory and run:
 ```bash
