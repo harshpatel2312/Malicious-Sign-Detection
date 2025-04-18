@@ -7,6 +7,7 @@
 
 # Ignore python cache
 **/__pycache__/
+__pycache__
 
 # Ignore training data
 traffic_light_data/
