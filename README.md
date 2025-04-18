@@ -13,12 +13,10 @@ Malicious-Sign-Detection/
 │
 ├── model/
 │   ├── Trained_with_threshold.pkl
-│   ├── Resources/
-│   │   └── Videos/
-│   │       └── your_video.mp4
 │   └── Scripts/
 │       ├── classify.py
 │       └── Traffic_Light_Presence_Detector.py
+├── your_video.mp4
 ├── requirements.txt
 ```
 
