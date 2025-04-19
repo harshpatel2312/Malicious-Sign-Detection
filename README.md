@@ -49,17 +49,26 @@ Start the Flask dashboard:
 ```python
 python app.py
 ```
-Then visit: 
+>💡 Now open a separate terminal and run `Traffic_Light_Presence_Detector.py` to start generating predictions and metrics.
+```python
+python Traffic_Light_Presence_Detector.py
+```
+Once both are running, visit:
+
 🔗 http://127.0.0.1:5001/monitor
+
+to view the live monitoring dashboard.
+
+>🛈 If you haven’t downloaded or set up the files from [`detection_model`](https://github.com/harshpatel2312/Malicious-Sign-Detection/tree/detection_model) branch yet, then please follow the instructions in the [`detection_model`](https://github.com/harshpatel2312/Malicious-Sign-Detection/tree/detection_model) branch before proceeding.
 
 ## 🧪 What You’ll See
 * Execution time
 * Per-frame predictions streamed live to the dashboard
 
 ## 🧾 Notes
-* The dashboard refreshes every 1 second.
+* The dashboard refreshes every second.
 * This app only displays classification results — all detection and classification is handled in the backend by the `Traffic_Light_Presence_Detector.py`.
-* For integration help with the detection system, refer to the `detection_model` branch.
+* For integration help with the detection system, refer to the [`detection_model`](https://github.com/harshpatel2312/Malicious-Sign-Detection/tree/detection_model) branch.
 
 ## 📃 License
 MIT License © Harsh Patel
