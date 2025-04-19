@@ -121,3 +121,8 @@ This modular design allows easy reuse in smart city systems, autonomous driving,
 
 ## 🧠 YOLOv8 Weights
 Make sure you have `yolov8n.pt` downloaded or accessible if not already present in your environment. You can download it from: https://github.com/ultralytics/ultralytics
+
+---
+
+## 📃 License
+MIT License © Harsh Patel
