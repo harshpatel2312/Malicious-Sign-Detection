@@ -10,7 +10,6 @@ Ensure the following file structure is maintained:
 
 ```bash
 Malicious-Sign-Detection/
-│
 ├── model/
 │   ├── Trained_with_threshold.pkl
 │   └── Scripts/
