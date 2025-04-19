@@ -13,10 +13,10 @@ __pycache__
 traffic_light_data/
 
 # Ignore all video files in any Videos folder
-model/Resources/Videos/*.*
+#model/Resources/Videos/*.*
 
 # Keep the folder itself
-!model/Resources/Videos/
+#!model/Resources/Videos/
 
 # Ignore model weight files
 **/yolov8n.pt
