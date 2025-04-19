@@ -1,10 +1,10 @@
-## 🚦 Traffic Light Presence Detection
+# 🚦 Traffic Light Presence Detection
 
 `Traffic_Light_Presence_Detector.py` detects and classifies traffic light colors in video frames using a combination of **YOLOv8** object detection and a custom-trained **SVM classifier**.
 
 ---
 
-### 📁 Required File Structure
+## 📁 Required File Structure
 
 Ensure the following file structure is maintained:
 
@@ -24,14 +24,16 @@ Malicious-Sign-Detection/
 ├── requirements.txt
 ```
 
-### 🔄 Option 1: Clone the Repository
+---
+
+## 🔄 Option 1: Clone the Repository
 
 ```bash
 git clone https://github.com/harshpatel2312/Malicious-Sign-Detection.git
 cd Malicious-Sign-Detection
 ```
 
-### 🧰 Setting Up Environment & Installing Dependencies
+## 🧰 Setting Up Environment & Installing Dependencies
 1. **Create a virtual environment**
 ```bash
 # Create virtual environment
@@ -48,7 +50,9 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 📥 Option 2: Download Individual Files
+---
+
+## 📥 Option 2: Download Individual Files
 If you prefer to download only a few files, ensure the following are placed together in the correct structure:
 * `Traffic_Light_Presence_Detector.py`
 * `classify.py`
@@ -60,7 +64,9 @@ from classify import test # Modify the path to `classify.py`, if not using prede
 model_file_name = "Trained_with_threshold.pkl" # Modify path as necessary
 ```
 
-### 🎥 Using Your Own Video
+---
+
+## 🎥 Using Your Own Video
 To test the model with your own video:
 1. Place your video file inside the `model/Scripts/Resources/Videos/` folder.
 2. Update the path in `Traffic_Light_Presence_Detector.py`:
@@ -68,7 +74,9 @@ To test the model with your own video:
 video_path = r"Scripts/Resources/Videos/your_video.mp4" # Modify path as necessary
 ```
 
-### 🌐 Optional: Monitor via Web Dashboard
+---
+
+## 🌐 Optional: Monitor via Web Dashboard
 > 🛈 **Skip this step if you prefer viewing results directly in the terminal.** This is only needed if you want to monitor predictions on a web interface.
 
 If you’d like to **view model predictions and performance on a live dashboard**, consider using the [`web_monitoring`](https://github.com/harshpatel2312/Malicious-Sign-Detection/tree/web_monitoring) branch:
@@ -84,18 +92,24 @@ This branch provides:
 
 📌 Follow the setup instructions in the [`web_monitoring`](https://github.com/harshpatel2312/Malicious-Sign-Detection/tree/web_monitoring) branch’s README to get started.
 
-### 🧪 Running Traffic Light Presence Detector
+---
+
+## 🧪 Running Traffic Light Presence Detector
 Navigate to the `Scripts` directory and run:
 ```bash
 cd Malicious-Sign-Detection/model/Scripts
 python Traffic_Light_Presence_Detector.py
 ```
 
-### 📄 Output
+---
+
+## 📄 Output
 * Displays the video in `greyscale`.
 * Prints the predicted light color (red, yellow, green, or unknown) per frame.
 
-### 💼 Use in Your Own Projects
+---
+
+## 💼 Use in Your Own Projects
 You are welcome to integrate this classifier into your own applications. Simply:
 * Import `classify.py` and the trained `Trained_with_threshold.pkl` model.
 * Resize and preprocess your traffic light images or frames as shown.
@@ -103,5 +117,7 @@ You are welcome to integrate this classifier into your own applications. Simply:
 
 This modular design allows easy reuse in smart city systems, autonomous driving, or surveillance analysis.
 
-### 🧠 YOLOv8 Weights
+---
+
+## 🧠 YOLOv8 Weights
 Make sure you have `yolov8n.pt` downloaded or accessible if not already present in your environment. You can download it from: https://github.com/ultralytics/ultralytics
