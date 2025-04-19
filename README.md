@@ -122,6 +122,11 @@ This modular design allows easy reuse in smart city systems, autonomous driving,
 
 ---
 
+## 🧠 Want to Train the Model Yourself?
+Visit [`train_model`](https://github.com/harshpatel2312/Malicious-Sign-Detection/tree/train_model) branch for more info.
+
+---
+
 ## 🧠 YOLOv8 Weights
 Make sure you have `yolov8n.pt` downloaded or accessible if not already present in your environment. You can download it from: https://github.com/ultralytics/ultralytics
 
