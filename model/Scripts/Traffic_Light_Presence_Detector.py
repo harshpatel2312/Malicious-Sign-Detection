@@ -11,24 +11,24 @@ import threading
 app = Flask(__name__)
 
 def run_flask():
-    app.run(host='0.0.0.0', port=5000, debug=False)
-
-@app.route('/data', methods=['GET'])
-def get_data():
-    return jsonify(report), 200
-
-threading.Thread(target=run_flask, daemon=True).start()
+    app.run(host='127.0.0.1', port=5000, debug=False)
 
 # Loading the trained model
 model_file_name = r"..\Trained_with_threshold.pkl"
 with open(model_file_name, 'rb') as file:
     best_estimator = pickle.load(file)
 
-# Loading calssification_report
+# Loading classification_report
 with open('Resources/classification_report', 'rb') as f:
     report = pickle.load(f)
 report["Execution_Time_of_Prediction"] = None
 report["Test_Results"] = []
+
+@app.route('/data', methods=['GET'])
+def get_data():
+    return jsonify(report), 200
+
+threading.Thread(target=run_flask, daemon=True).start()
 
 img_size = (20, 20) # Resizing for consistency
 
@@ -40,7 +40,7 @@ screen_width, screen_height = screen.width, screen.height
 model = YOLO('yolov8n.pt') 
 
 # Load the video
-video_path = r"..\Resources\Videos\Real_life_test_daylight_3.mp4"
+video_path = r"Resources\Videos\Real_life_test_daylight_3.mp4"
 
 cap = cv2.VideoCapture(video_path)
 if not cap.isOpened():
