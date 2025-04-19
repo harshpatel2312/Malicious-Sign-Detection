@@ -110,11 +110,20 @@ python Traffic_Light_Presence_Detector.py
 
 ## 💼 Use in Your Own Projects
 You are welcome to integrate this classifier into your own applications. Simply:
+> Make sure you resize the image to 20x20 pixels as shown below:
 * Import `classify.py` and the trained `Trained_with_threshold.pkl` model.
 * Resize and preprocess your traffic light images or frames as shown.
+```python
+img_size = (20, 20) # Make sure to resize to 20x20 pixels, as the trained model expects 20x20 image size
+```
 * Call the `classify_image_with_unknown()` function.
 
 This modular design allows easy reuse in smart city systems, autonomous driving, or surveillance analysis.
+
+---
+
+## 🧠 Want to Train the Model Yourself?
+Visit [`train_model`](https://github.com/harshpatel2312/Malicious-Sign-Detection/tree/train_model) branch for more info.
 
 ---
 
